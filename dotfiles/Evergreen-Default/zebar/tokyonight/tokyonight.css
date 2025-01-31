@@ -1,0 +1,217 @@
+@import 'https://www.nerdfonts.com/assets/css/webfont.css';
+
+:root {
+    --background: #5C6A72;
+    --foreground: #a9b1d6;
+    --black: #414868;
+    --red: #f7768e;
+    --green: #9ece6a;
+    --yellow: #e0af68;
+    --blue: #7aa2f7;
+    --magenta: #bb9af7;
+    --cyan: #7dcfff;
+    --white: #a9b1d6;
+    --bright-black: #1a1b26;
+    --bright-red: #db4b4b;
+    --bright-green: #73daca;
+    --e-green: #83C092;
+    --bright-yellow: #ff9e64;
+    --bright-blue: #2ac3de;
+    --bright-magenta: #ff007c;
+    --bright-cyan: #89ddff;
+    --bright-white: #c0caf5;
+    --cream: #D3C6AA;
+    --gray-soft: #5C6A72;
+    --orange-soft: #DBBC7F;
+}
+
+body {
+  color: var(--bright-white);
+  font-family: 'Nerd Font', 'Segoe UI', ui-monospace, monospace;
+  font-size: 11px;
+  overflow: hidden;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+
+}
+
+#root {
+  background-color: var(--background);
+  height: 35px;
+  opacity: 0.2px; 
+  border-radius: 15px;
+  user-select: none;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-bottom: 5px;
+  margin-top: 4px; 
+  overflow: hidden;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  height: 100%;
+  padding: 0 1vw; /* Adjusted padding */
+  box-sizing: border-box; /* Ensures padding is included in the width calculation */
+}
+
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: center;
+}
+
+.right {
+  justify-self: end;
+}
+
+.logo,
+.binding-mode,
+.tiling-direction,
+.date,
+.weather,
+.network,
+.memory,
+.cpu,
+.media {
+  margin-right: 20px;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+    background: rgba(255, 255, 255, 0.05); /* More readable transparency */
+    color: var(--font-color);
+    padding: 6px 12px;
+    margin-right: 4px;
+    margin-top: 4px; /* Adjust workspace position */
+    border: 4px solid transparent;
+    border-radius: 0; /* Ensure no rounded corners */
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+}
+/* When the workspace is displayed */
+.workspace.displayed {
+    background: transparent;
+    border-radius: 0; /* Ensure no rounding */
+    border-bottom: 3px solid var(--e-green); /* Change to your desired underline color */
+}
+
+
+.workspace.focused,
+.workspace:hover {
+    background: var(--e-green); /* Keep highlight color */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional subtle glow */
+    transform: none; /* Remove scaling to stop bouncing */
+}
+
+.workspace.displayed.focused {
+    background: transparent;
+    opacity: 0.5;
+    border-radius: 0; /* Prevent rounding */
+}
+
+.workspace.displayed::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px; /* Thickness of the underline */
+    background-color: var(--bright-blue);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.binding-mode,
+.tiling-direction {
+  background: var(--bright-black);
+  color: var(--bright-white);
+  border-radius: 2px;
+  line-height: 1;
+  padding: 4px 8px;
+  border: 0;
+  margin: 0 7px;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--black);
+  }
+}
+
+.binding-mode {
+  margin-right: 4px;
+}
+
+.cpu .high-usage {
+  color: var(--bright-red);
+}
+
+/* ICONS */
+i {
+  margin-right: 7px;
+}
+
+.logo {
+  color: var(--e-green);
+}
+
+.date i {
+    margin-bottom: 2px;
+  color: var(--yellow);
+}
+.time i {
+  color: var(--magenta);
+}
+
+.network i {
+  color: var(--yellow);
+}
+.network i {
+  margin: 0;
+}
+
+.media i {
+  color: var(--green);
+}
+
+.weather {
+  margin-bottom: 2px;
+}
+.weather i {
+  color: var(--cyan);
+  font-size: 16px;
+}
+
+.cpu i {
+  color: var(--red);
+}
+
+.memory i {
+  color: var(--blue);
+}
+
+.battery i {
+  color: var(--green);
+}

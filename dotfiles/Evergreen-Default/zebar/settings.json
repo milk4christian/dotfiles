@@ -1,0 +1,9 @@
+{
+  "$schema": "TODO",
+  "startupConfigs": [
+    {
+      "path": "tokyonight\\tokyonight.zebar.json",
+      "preset": "tokyonight"
+    }
+  ]
+}
